@@ -4,6 +4,6 @@
     <string name="app_name">Ghost Hunter</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="splash_screen">Project Ghost Hunter\nDaniel Hoerauf\nJoe Gumprich\nMarwa Abdelaziz\n Jake Bailey\nCS 2110</string>
+    <string name="splash_screen">Project Ghost Hunter\nDaniel Hoerauf\nJoe Gumprich\nMarwa Abdelaziz\n Jake Bailey</string>
 
 </resources>

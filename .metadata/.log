@@ -313,3 +313,83 @@ Binding(ALT+SHIFT+ARROW_UP,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-06 18:29:36.414
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2014-11-06 18:29:36.414
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2014-11-06 18:29:36.414
+!MESSAGE "Eclipse Git Team Provider" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2014-11-06 18:29:36.414
+!MESSAGE "Java implementation of Git" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:29:36.414
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.414
+!MESSAGE Software being installed: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.414
+!MESSAGE Missing requirement: Apache HttpComponents HttpClient OSGi bundle 4.1.3.v201209201135 (org.apache.httpcomponents.httpclient 4.1.3.v201209201135) requires 'package org.apache.commons.codec.binary 1.4.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:29:36.414
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.414
+!MESSAGE From: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.414
+!MESSAGE To: org.apache.httpcomponents.httpclient [4.1.3.v201209201135]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-06 18:29:36.429
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2014-11-06 18:29:36.429
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2014-11-06 18:29:36.429
+!MESSAGE "Eclipse Git Team Provider" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2014-11-06 18:29:36.429
+!MESSAGE "Java implementation of Git" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:29:36.429
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.429
+!MESSAGE Software being installed: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.429
+!MESSAGE Missing requirement: Apache HttpComponents HttpClient OSGi bundle 4.1.3.v201209201135 (org.apache.httpcomponents.httpclient 4.1.3.v201209201135) requires 'package org.apache.commons.codec.binary 1.4.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:29:36.429
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.429
+!MESSAGE From: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:29:36.429
+!MESSAGE To: org.apache.httpcomponents.httpclient [4.1.3.v201209201135]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-06 18:30:00.962
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2014-11-06 18:30:00.962
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2014-11-06 18:30:00.962
+!MESSAGE "Java implementation of Git" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:30:00.962
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.962
+!MESSAGE Software being installed: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.962
+!MESSAGE Missing requirement: Apache HttpComponents HttpClient OSGi bundle 4.1.3.v201209201135 (org.apache.httpcomponents.httpclient 4.1.3.v201209201135) requires 'package org.apache.commons.codec.binary 1.4.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:30:00.962
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.962
+!MESSAGE From: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.962
+!MESSAGE To: org.apache.httpcomponents.httpclient [4.1.3.v201209201135]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-06 18:30:00.978
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2014-11-06 18:30:00.978
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2014-11-06 18:30:00.978
+!MESSAGE "Java implementation of Git" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:30:00.978
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.978
+!MESSAGE Software being installed: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.978
+!MESSAGE Missing requirement: Apache HttpComponents HttpClient OSGi bundle 4.1.3.v201209201135 (org.apache.httpcomponents.httpclient 4.1.3.v201209201135) requires 'package org.apache.commons.codec.binary 1.4.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-06 18:30:00.978
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.978
+!MESSAGE From: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.978
+!MESSAGE To: org.apache.httpcomponents.httpclient [4.1.3.v201209201135]
