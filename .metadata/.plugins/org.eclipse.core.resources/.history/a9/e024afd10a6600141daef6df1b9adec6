@@ -6,9 +6,9 @@
      <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:textSize="36sp"
-        android:textColor="#b6fcd5"
+        android:layout_marginBottom="10dp"
+        android:textSize="24sp"
+        android:textColor="#454545"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:text="@string/splash_screen" />
