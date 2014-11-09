@@ -393,3 +393,6 @@ Binding(ALT+SHIFT+ARROW_UP,
 !MESSAGE From: Java implementation of Git - optional Http support using Apache httpclient 3.5.1.201410131835-r (org.eclipse.jgit.http.apache.feature.group 3.5.1.201410131835-r)
 !SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-06 18:30:00.978
 !MESSAGE To: org.apache.httpcomponents.httpclient [4.1.3.v201209201135]
+
+!ENTRY org.eclipse.ui 2 2 2014-11-07 10:44:03.672
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
