@@ -15,7 +15,7 @@ public class SplashScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SplashMusic = MediaPlayer.create(SplashScreen.this, R.raw.splash_screen_gong);
+        SplashMusic = MediaPlayer.create(SplashScreen.this, R.raw.splash_screen_chimes);
         SplashMusic.start();
         setContentView(R.layout.activity_splash);
  
