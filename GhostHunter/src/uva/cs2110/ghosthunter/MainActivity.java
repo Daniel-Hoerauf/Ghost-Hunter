@@ -3,6 +3,8 @@ package uva.cs2110.ghosthunter;
 import android.app.Activity;
 import android.media.MediaPlayer;
 //import android.hardware.*;
+import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,6 +53,7 @@ public class MainActivity extends Activity {
     }
     
     public void startGame(View view)	{
-    	
+    	Intent i = new Intent(MainActivity.this, MainGame.class);
+        startActivity(i);
     }
 }
