@@ -8,7 +8,7 @@ import android.os.*;
 public class SensorActivity extends Activity implements SensorEventListener {
 	private SensorManager aSensorManager;
 	private Sensor accelerometer;
-	public float x, y, z;
+	private static float x, y, z;
 
 	@Override
 	public final void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,22 @@ public class SensorActivity extends Activity implements SensorEventListener {
 		aSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		accelerometer = aSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 	}
+
+	public static float getX() {
+		return x;
+	}
+	
+	
+	public static float getY() {
+		return y;
+	}
+
+
+	public static float getZ() {
+		return z;
+	}
+
+
 
 	@Override
 	public final void onAccuracyChanged(Sensor sensor, int accuracy) {
