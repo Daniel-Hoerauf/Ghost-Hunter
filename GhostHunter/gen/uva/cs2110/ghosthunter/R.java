@@ -22,10 +22,12 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int background=0x7f020000;
-        public static final int background2=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int mainbg=0x7f020003;
+        public static final int asteroid=0x7f020000;
+        public static final int background=0x7f020001;
+        public static final int background2=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int mainbg=0x7f020004;
+        public static final int ufo=0x7f020005;
     }
     public static final class id {
         public static final int action_settings=0x7f090003;
@@ -37,6 +39,7 @@ public final class R {
         public static final int activity_main=0x7f030000;
         public static final int activity_splash=0x7f030001;
         public static final int game_main=0x7f030002;
+        public static final int options_menu=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f080000;

@@ -20,8 +20,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-//        menuMusic = MediaPlayer.create(main.this, R.values.(somemusicfile))
-        menuMusic.start();
+        //menuMusic = MediaPlayer.create(main.this, R.values.(somemusicfile))
+        //menuMusic.start();
     }
 
 
@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		menuMusic.release();
+		//menuMusic.release();
 	}
 
 
@@ -55,5 +55,10 @@ public class MainActivity extends Activity {
     public void startGame(View view)	{
     	Intent i = new Intent(MainActivity.this, MainGame.class);
         startActivity(i);
+    }
+    
+    public void optionsMenu(View view)	{
+    	Intent i = new Intent(MainActivity.this, OptionsMenu.class);
+    	startActivity(i);
     }
 }

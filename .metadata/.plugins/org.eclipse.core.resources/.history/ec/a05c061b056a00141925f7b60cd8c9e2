@@ -1,0 +1,132 @@
+package uva.cs2110.ghosthunter;
+
+import java.util.Random;
+
+import android.app.Activity;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+
+public class MainGame extends Activity implements OnClickListener{
+	private Handler frame = new Handler();
+
+	//Divide the frame by 1000 to calculate how many times per second the screen will update.
+
+	private static final int FRAME_RATE = 20; //50 frames per second
+
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		//Remove title bar
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//Remove notification bar
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		setContentView(R.layout.game_main);
+
+		Handler h = new Handler();
+		((Button)findViewById(R.id.playButton)).setOnClickListener(this);
+
+		//We can't initialize the graphics immediately because the layout manager
+
+		//needs to run first, thus call back in a sec.
+		h.postDelayed(new Runnable() {
+
+			@Override
+
+			public void run() {
+
+				initGfx();
+
+			}
+
+		}, 1000);
+
+	}
+
+
+	private Point getRandomPoint() {
+		Random r = new Random();
+		int minX = 0;
+		int maxX = findViewById(R.drawable.background2).getWidth() - ((GameBoard)findViewById(R.drawable.background2)).getSprite1Width();
+		int x = 0;
+		int minY = 0;
+		int maxY = findViewById(R.drawable.background2).getHeight() - ((GameBoard)findViewById(R.drawable.background2)).getSprite1Height();
+		int y = 0;
+
+		x = r.nextInt(maxX-minX+1)+minX;
+
+		y = r.nextInt(maxY-minY+1)+minY;
+
+		return new Point (x,y);
+
+	}
+
+
+	synchronized public void initGfx() {
+
+		((GameBoard)findViewById(R.drawable.background2)).resetStarField();
+
+		//Select two random points for our initial sprite placement.
+
+		//The loop is just to make sure we don't accidentally pick
+
+		//two points that overlap.
+
+		Point p1, p2;
+
+		do {
+
+			p1 = getRandomPoint();
+
+			p2 = getRandomPoint();
+
+		} while (Math.abs(p1.x - p2.x) <
+
+				((GameBoard)findViewById(R.drawable.background2)).getSprite1Width());
+
+		((GameBoard)findViewById(R.drawable.background2)).setSprite1(p1);
+
+		((GameBoard)findViewById(R.drawable.background2)).setSprite2(p2);
+
+		((Button)findViewById(R.id.playButton)).setEnabled(true);
+
+		frame.removeCallbacks(frameUpdate);
+
+		frame.postDelayed(frameUpdate, FRAME_RATE);
+
+	}
+
+	@Override
+
+	synchronized public void onClick(View v) {
+
+		initGfx();
+
+	}
+
+
+	private Runnable frameUpdate = new Runnable() {
+
+		@Override
+
+		synchronized public void run() {
+
+			frame.removeCallbacks(frameUpdate);
+
+			//make any updates to on screen objects here
+
+			//then invoke the on draw by invalidating the canvas
+
+			((GameBoard)findViewById(R.drawable.background2)).invalidate();
+
+			frame.postDelayed(frameUpdate, FRAME_RATE);
+
+		}
+
+	};
+
+}
