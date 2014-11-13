@@ -1,36 +1,48 @@
 package uva.cs2110.ghosthunter;
 
-import java.awt.*;
+import java.io.*;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 public class Player {
-	private int positionX;
-	private int positionY;
-	private boolean jumped = false;
 	
-	private int velocityX;
-	private int velocityY;
-
+	//Need to variable of the shape of player
 	
+	public static float xPos;
+	public static float yPos;
+	public static float xSpeed = 10;
+	public static float ySpeed = 10;
+	public static float gravity = 5;
 	
-	public void update() {
-		float x = SensorActivity.getY();
-		if (x > 0) {
-			positionX += speedX;
-		} else {
-			positionX -= speedX;
-		}
-			
-		if (positionX + SensorActivity.getY() >= 300) {
-			positionX = 300;
-		}
-		else {
-			positionX += speedX;
-		}
+	public Player() {
+		//create instance of a player
 	}
 
-	public void updateX() {
+	
+	public static void stop() {
+		xPos = MainGame.xPosition;
+		yPos = MainGame.yPosition;
 		
 	}
 	
+	public static void moveRight() {
+		xPos += xSpeed;
+	}
+	
+	public static void moveLeft() {
+		xPos -= xSpeed;
+	}
+	
+	public static void jump() {
+		yPos += ySpeed;
+		if (yPos < 500) { //or whatever the bottom limit is for the screen
+			yPos += gravity;
+		}
+		//may need to implement drag feature
+	}
+	
+
 	
 }

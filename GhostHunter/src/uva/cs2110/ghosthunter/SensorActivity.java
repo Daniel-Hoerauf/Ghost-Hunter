@@ -8,7 +8,7 @@ import android.os.*;
 public class SensorActivity extends Activity implements SensorEventListener {
 	private SensorManager aSensorManager;
 	private Sensor accelerometer;
-	private static float x, y, z;
+	private float x, y, z;
 
 	@Override
 	public final void onCreate(Bundle savedInstanceState) {
@@ -18,20 +18,39 @@ public class SensorActivity extends Activity implements SensorEventListener {
 		accelerometer = aSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 	}
 
-	public static float getX() {
+	public void setX(float x) {
+		this.x = x;
+	}
+	
+	public float getX() {
 		return x;
 	}
 	
+	public void setY(float y) {
+		this.y = y;
+	}
 	
-	public static float getY() {
+	public float getY() {
 		return y;
 	}
 
+	
+	public void setZ(float z) {
+		this.z = z;
+	}
 
-	public static float getZ() {
+	public float getZ() {
 		return z;
 	}
 
+	
+	public SensorManager getSensorManager() {
+	    return aSensorManager;
+	}
+
+	public void setSensorManager(SensorManager sensorManager) {
+	    this.aSensorManager = aSensorManager;
+	}
 
 
 	@Override
@@ -44,15 +63,25 @@ public class SensorActivity extends Activity implements SensorEventListener {
 		x = event.values[0];
 		y = event.values[1];
 		z = event.values[2];
-		// return 3 values, one for each axis.
-		// Do something with values.
+		
+	    if (z == 0.0){
+	        Player.stop();
+	    }
+	    if(z >= 1.5){
+	        Player.moveRight();
+	    }
+
+	    if (z <= -1.5){
+	        Player.moveLeft();
+	    }
+		
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
 		aSensorManager.registerListener(this, accelerometer,
-				SensorManager.SENSOR_DELAY_NORMAL);
+				SensorManager.SENSOR_DELAY_GAME);
 	}
 
 	@Override
