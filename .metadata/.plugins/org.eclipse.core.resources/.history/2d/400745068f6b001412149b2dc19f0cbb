@@ -1,7 +1,5 @@
 package uva.cs2110.ghosthunter;
 
-import java.util.ArrayList;
-
 interface Ghost {
 	
 	public void getXPos();
@@ -30,9 +28,5 @@ interface Ghost {
 	 * @return After switching between enemy/friend, will then call getEnemyStatus on itself
 	 */
 	public boolean changeEnemyStatus();
-	
-	public ArrayList<Item> getInventory();
-	
-	public ArrayList<Item> addItems(Item...items);
 
 }
