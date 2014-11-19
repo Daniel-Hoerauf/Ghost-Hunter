@@ -35,13 +35,13 @@ public class MainGame extends Activity {
 		Paint paint = new Paint();
         paint.setColor(Color.parseColor("#000000"));
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inMutable = true;
+        options.inJustDecodeBounds = true;
 		Bitmap bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
 
-		Canvas canvas = new Canvas(bg);
+		Canvas canvas = new Canvas(bg.copy(Bitmap.Config.ARGB_8888, true));
 		canvas.drawBitmap(bg, 50, 300, paint);
-		//RelativeLayout linlay = (RelativeLayout) findViewById(R.drawable.background);
-		//linlay.setBackground(new BitmapDrawable(getResources(), bg));
+		RelativeLayout linlay = (RelativeLayout) findViewById(R.drawable.background);
+		linlay.setBackgroundDrawable(new BitmapDrawable(bg));
 		
 //		mLinearLayout = new LinearLayout(this);
 //		ImageView i = new ImageView(this);
