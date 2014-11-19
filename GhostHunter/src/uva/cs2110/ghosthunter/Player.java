@@ -22,8 +22,8 @@ public class Player {
 
 	
 	public static void stop() {
-		xPos = MainGame.xPosition;
-		yPos = MainGame.yPosition;
+		xPos += 0;
+		yPos += 0;
 		
 	}
 	
