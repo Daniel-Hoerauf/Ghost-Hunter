@@ -15,8 +15,7 @@ public class MainGame extends Activity {
 	public static float yPosition = 300;
 	public static float xPosition = 500;
 	private Player character = new Player();
-	private Bitmap b = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
-	private Canvas c = new Canvas(b);
+
 
 	LinearLayout mLinearLayout;
 	//want to place this instance of a player somewhere specific on the main game activity screen
@@ -37,7 +36,7 @@ public class MainGame extends Activity {
         paint.setColor(Color.parseColor("#000000"));
 		Bitmap bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player);
 
-		Canvas canvas = new Canvas(bg);
+		Canvas canvas = new Canvas(bg.copy(Bitmap.Config.ARGB_8888, true));
 		canvas.drawBitmap(bg, 50, 300, paint);
 		RelativeLayout linlay = (RelativeLayout) findViewById(R.drawable.background);
 		linlay.setBackgroundDrawable(new BitmapDrawable(bg));
