@@ -8,12 +8,15 @@ import android.view.*;
 import android.widget.*;
 import android.widget.Gallery.LayoutParams;
 import android.app.*;
+import android.content.Intent;
 import android.support.*;
 
-public class MainGame extends Activity {
+public class MainGame extends Activity  {
 
-	public static float yPosition = 300;
-	public static float xPosition = 500;
+	public static float yPosition = Player.yPos;
+	public static float xPosition = Player.xPos;
+	public static float ySpeed = 10;
+	public static float gravity = 5;
 	private Player character = new Player();
 
 
@@ -39,20 +42,21 @@ public class MainGame extends Activity {
 		Bitmap bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
 
 		Canvas canvas = new Canvas(bg);
-		canvas.drawBitmap(bg, 50, 300, paint);
-		//RelativeLayout linlay = (RelativeLayout) findViewById(R.drawable.background);
-		//linlay.setBackground(new BitmapDrawable(getResources(), bg));
-		
-//		mLinearLayout = new LinearLayout(this);
-//		ImageView i = new ImageView(this);
-//		i.setImageResource(R.drawable.main_player);
-//		i.setAdjustViewBounds(true);
-//		i.setLayoutParams(new Gallery.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//
-//		mLinearLayout.addView(i);
-//		setContentView(mLinearLayout);
+		canvas.drawBitmap(bg, yPosition, xPosition, paint); //x and y, so think of it as y and x because horizontal
+
 	}
 	
+	protected void onDraw(Canvas canvas) {
+		canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.main_player), 10, 10, null);
+	}
+	
+	
+    public void jump(View view)	{
+		yPosition += ySpeed;
+		if (yPosition < 500) { //or whatever the bottom limit is for the screen
+			yPosition += gravity;
+		}
+    }
 
 }
 

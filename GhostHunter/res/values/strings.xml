@@ -8,5 +8,7 @@
 	<string name="options_text">Options</string>
 	<string name="welcome_text">Welcome to Ghost Hunter!</string>
 	<string name="play_text">Play</string>
+	<string name="jump_text">Jump!</string>
+	<string name="shoot_text">Shoot!</string>
     
 </resources>
