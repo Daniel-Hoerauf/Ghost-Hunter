@@ -44,15 +44,13 @@ public class GameView extends View {
     }*/
 
 	public void onDraw(Canvas canvas)	{
-		while(true)	{
-			canvas = this.canvas;
-			super.onDraw(canvas);
-			//this.canvas = can;
-			canvas.drawBitmap(bg, Player.yPos, Player.xPos, paint); //x and y, so think of it as y and x because horizontal
-			this.invalidate();
-		}
+		canvas = this.canvas;
+		super.onDraw(canvas);
+		//this.canvas = can;
+		canvas.drawBitmap(bg, Player.yPos, Player.xPos, paint); //x and y, so think of it as y and x because horizontal
+		this.invalidate();
 	}
-
+	
 	private class Monitor implements Runnable {
 		public void run() {
 			while (true) {
@@ -63,6 +61,7 @@ public class GameView extends View {
 					// trace.
 					e.printStackTrace();
 				}
+				onDraw(canvas);
 				postInvalidate();
 			}
 		}

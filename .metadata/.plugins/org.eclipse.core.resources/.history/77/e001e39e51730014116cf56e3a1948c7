@@ -10,8 +10,8 @@ public class Player {
 	
 	//Need to variable of the shape of player
 	
-	public static float xPos = 600;
-	public static float yPos = 50;
+	public static float xPos = 50;
+	public static float yPos = 300;
 	public static float xSpeed = 10;
 	public static float ySpeed = 10;
 	public static float gravity = 5;
@@ -36,9 +36,9 @@ public class Player {
 	}
 	
 	public static void jump() {
-		xPos += xSpeed;
-		if (xPos < 600) { //or whatever the bottom limit is for the screen
-			xPos -= gravity;
+		yPos += ySpeed;
+		if (yPos < 500) { //or whatever the bottom limit is for the screen
+			yPos += gravity;
 		}
 		//may need to implement drag feature
 	}
