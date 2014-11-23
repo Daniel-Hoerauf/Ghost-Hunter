@@ -49,7 +49,7 @@ public class SensorActivity extends Activity implements SensorEventListener {
 	}
 
 	public void setSensorManager(SensorManager sensorManager) {
-	    this.aSensorManager = aSensorManager;
+	    this.aSensorManager = sensorManager;
 	}
 
 

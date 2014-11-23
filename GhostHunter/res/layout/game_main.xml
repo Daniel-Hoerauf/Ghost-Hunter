@@ -9,11 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@android:style/Theme.Black.NoTitleBar" >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/main_player" />
-
     <Button
         android:id="@+id/shootButton"
         android:layout_width="wrap_content"
@@ -35,5 +30,10 @@
         android:onClick="jump"
         android:text="@string/jump_text"
         android:textColor="#0000FF" />
+
+    <uva.cs2110.ghosthunter.GameView
+        android:id="@+id/gameView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

@@ -35,7 +35,7 @@ public class MainGame extends Activity  {
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.game_main);
 		//where to change position
-		Paint paint = new Paint();
+		/*Paint paint = new Paint();
         paint.setColor(Color.parseColor("#000000"));
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inMutable = true;
@@ -43,12 +43,12 @@ public class MainGame extends Activity  {
 
 		Canvas canvas = new Canvas(bg);
 		canvas.drawBitmap(bg, yPosition, xPosition, paint); //x and y, so think of it as y and x because horizontal
-
+		*/
 	}
 	
-	protected void onDraw(Canvas canvas) {
-		canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.main_player), 10, 10, null);
-	}
+	//protected void onDraw(Canvas canvas) {
+		//canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.main_player), 10, 10, null);
+	//}
 	
 	
     public void jump(View view)	{

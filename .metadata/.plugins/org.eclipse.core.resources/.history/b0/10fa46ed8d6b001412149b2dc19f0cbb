@@ -1,5 +1,0 @@
-package uva.cs2110.ghosthunter;
-
-interface Ghost {
-
-}

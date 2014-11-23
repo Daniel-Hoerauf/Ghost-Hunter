@@ -31,7 +31,8 @@ public final class R {
         public static final int ufo=0x7f020006;
     }
     public static final class id {
-        public static final int action_settings=0x7f090005;
+        public static final int action_settings=0x7f090006;
+        public static final int gameView1=0x7f090005;
         public static final int jumpButton=0x7f090004;
         public static final int optionsButton=0x7f090001;
         public static final int playButton=0x7f090002;

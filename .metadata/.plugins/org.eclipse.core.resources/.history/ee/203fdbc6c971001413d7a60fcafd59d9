@@ -1,0 +1,23 @@
+package uva.cs2110.ghosthunter;
+
+import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.view.*;
+
+public class GameScreen extends View {
+
+	public GameScreen(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+	
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		
+		//canvas.drawBitmap(bg, yPosition, xPosition, paint); //x and y, so think of it as y and x because horizontal
+		canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.main_player), 100, 10, null);
+	}
+	
+
+}
