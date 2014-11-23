@@ -44,9 +44,14 @@ public class GameView extends View {
 
 	public void onDraw(Canvas canvas)	{
 		super.onDraw(canvas);
-		canvas.drawBitmap(bg, Player.yPos, Player.xPos, paint); //x and y, so think of it as y and x because horizontal
-		this.invalidate();
+		updatePositions(canvas);
 	}
+
+	protected void updatePositions(Canvas canvas){
+		canvas.drawBitmap(bg, Player.yPos, Player.xPos, paint); //x and y, so think of it as y and x because horizontal
+		this.invalidate();		
+	}
+
 	private class Monitor implements Runnable {
 		public void run() {
 			while (true) {
@@ -55,6 +60,7 @@ public class GameView extends View {
 				} catch (InterruptedException e) {
 					// This should not be interrupted. If it is, just dump the stack
 					// trace.
+
 					e.printStackTrace();
 				}
 				postInvalidate();

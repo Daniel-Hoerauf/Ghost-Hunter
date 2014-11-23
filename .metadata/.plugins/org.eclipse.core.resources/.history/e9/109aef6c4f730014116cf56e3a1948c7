@@ -35,14 +35,14 @@ public class Player {
 		xPos -= xSpeed;
 	}
 	
-	public static void jump() {
-		yPos += ySpeed;
-		if (yPos < 500) { //or whatever the bottom limit is for the screen
-			yPos += gravity;
-		}
-		//may need to implement drag feature
-	}
-	
+//	public static void jump() {
+//		yPos += ySpeed;
+//		if (yPos < 500) { //or whatever the bottom limit is for the screen
+//			yPos += gravity;
+//		}
+//		//may need to implement drag feature
+//	}
+//	
 
 	
 }
