@@ -13,16 +13,7 @@ public class MainGame extends Activity  {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//Remove notification bar
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		
-		Changelocation changer = new Changelocation();
-		
 		setContentView(R.layout.game_main);
-		
-		changer.execute(R.layout.game_main);
-		
-		
-		
-		
 
 	}
 	

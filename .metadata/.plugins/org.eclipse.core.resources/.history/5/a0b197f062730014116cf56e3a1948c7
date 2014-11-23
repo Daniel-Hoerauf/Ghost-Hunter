@@ -66,14 +66,14 @@ public class GameView extends View /*implements SensorEventListener*/ {
 				}
 			}
 		};
-		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
+		this.canvas.drawBitmap(bg, p1.yPos + count, p1.xPos + count, paint); //x and y, so think of it as y and x because horizontal
 		try {
 			Thread.sleep(INTERVAL);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		postInvalidate();
+		invalidate();
 	}
 
 	private class Monitor implements Runnable {

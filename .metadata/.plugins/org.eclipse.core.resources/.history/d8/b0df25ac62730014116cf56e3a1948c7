@@ -39,7 +39,7 @@ public class GameView extends View /*implements SensorEventListener*/ {
 		super(context, attrs, defStyle);
 		init();       
 	}
-	
+
 
 	private void init()	{
 		paint.setColor(Color.parseColor("#000000"));
@@ -50,8 +50,6 @@ public class GameView extends View /*implements SensorEventListener*/ {
 	}
 
 	protected void onDraw(Canvas canvas)	{
-		int count = 0;
-		count += 10;
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
 		View.OnClickListener moveMentHandler = new View.OnClickListener() {
@@ -73,7 +71,7 @@ public class GameView extends View /*implements SensorEventListener*/ {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		postInvalidate();
+		invalidate();
 	}
 
 	private class Monitor implements Runnable {

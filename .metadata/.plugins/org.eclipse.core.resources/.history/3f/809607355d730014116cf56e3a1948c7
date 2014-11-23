@@ -27,45 +27,48 @@ public class GameView extends View /*implements SensorEventListener*/ {
 	public GameView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
-		init();
-	} 
-
-	public GameView(Context context) {
-		super(context);
-		init();
-	}
-
-	public GameView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		init();       
-	}
-	
-
-	private void init()	{
 		paint.setColor(Color.parseColor("#000000"));
 		options.inMutable = true;
 		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
 		monitorThread.setPriority(Thread.MIN_PRIORITY);
 		monitorThread.start();
+	} 
+
+	public GameView(Context context) {
+		super(context);
+		paint.setColor(Color.parseColor("#000000"));
+		options.inMutable = true;
+		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
+		monitorThread.setPriority(Thread.MIN_PRIORITY);
+		monitorThread.start();
+
 	}
 
+	/*public GameView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+	    paint.setColor(Color.parseColor("#000000"));
+	    options.inMutable = true;
+	    bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);        
+    }*/
+
 	protected void onDraw(Canvas canvas)	{
-		int count = 0;
-		count += 10;
+		//while(true)	{
+		/*aSensorManager = (SensorManager)this.getContext().getSystemService(Context.SENSOR_SERVICE);
+			accelerometer = aSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);*/
+		Button left = (Button) findViewById(R.id.MovementLeft);
+		left.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				p1.moveLeft();
+			}
+		});
+		Button right = (Button) findViewById(R.id.MovementRight);
+		right.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				p1.moveRight();
+			}
+		});
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
-		View.OnClickListener moveMentHandler = new View.OnClickListener() {
-			public void onClick(View v) {
-				switch(v.getId()) {
-				case R.id.MovementLeft:
-					p1.moveLeft();
-					break;
-				case R.id.MovementRight:
-					p1.moveRight();
-					break;
-				}
-			}
-		};
 		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
 		try {
 			Thread.sleep(INTERVAL);
@@ -73,8 +76,33 @@ public class GameView extends View /*implements SensorEventListener*/ {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		postInvalidate();
+		invalidate();
+		//}
 	}
+
+	/*@Override
+	public final void onSensorChanged(SensorEvent event) {
+		z = event.values[2];
+
+	    if (z == 0.0){
+	        p1.stop();
+	    }
+	    if(z >= 1.5){
+	        p1.moveRight();
+	    }
+
+	    if (z <= -1.5){
+	        p1.moveLeft();
+	    }
+
+	}
+
+
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+		// TODO Auto-generated method stub
+
+	}*/
 
 	private class Monitor implements Runnable {
 		public void run() {

@@ -27,45 +27,40 @@ public class GameView extends View /*implements SensorEventListener*/ {
 	public GameView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
-		init();
+		paint.setColor(Color.parseColor("#000000"));
+		options.inMutable = true;
+		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
+		monitorThread.setPriority(Thread.MIN_PRIORITY);
+		monitorThread.start();
 	} 
 
 	public GameView(Context context) {
 		super(context);
 		init();
 	}
-
-	public GameView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		init();       
-	}
 	
-
-	private void init()	{
-		paint.setColor(Color.parseColor("#000000"));
-		options.inMutable = true;
-		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
-		monitorThread.setPriority(Thread.MIN_PRIORITY);
-		monitorThread.start();
-	}
+	/*public GameView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+	    paint.setColor(Color.parseColor("#000000"));
+	    options.inMutable = true;
+	    bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);        
+    }*/
 
 	protected void onDraw(Canvas canvas)	{
-		int count = 0;
-		count += 10;
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
 		View.OnClickListener moveMentHandler = new View.OnClickListener() {
-			public void onClick(View v) {
-				switch(v.getId()) {
-				case R.id.MovementLeft:
-					p1.moveLeft();
-					break;
-				case R.id.MovementRight:
-					p1.moveRight();
-					break;
-				}
-			}
-		};
+			  public void onClick(View v) {
+			      switch(v.getId()) {
+			        case R.id.MovementLeft:
+			          p1.moveLeft();
+			          break;
+			        case R.id.MovementRight:
+			          p1.moveRight();
+			          break;
+			      }
+			  }
+			};
 		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
 		try {
 			Thread.sleep(INTERVAL);
@@ -73,7 +68,15 @@ public class GameView extends View /*implements SensorEventListener*/ {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		postInvalidate();
+		invalidate();
+	}
+	
+	private void init()	{
+		paint.setColor(Color.parseColor("#000000"));
+		options.inMutable = true;
+		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
+		monitorThread.setPriority(Thread.MIN_PRIORITY);
+		monitorThread.start();
 	}
 
 	private class Monitor implements Runnable {
