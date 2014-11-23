@@ -16,7 +16,6 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="32dp"
         android:background="#FF8900"
-        android:onClick="shoot"
         android:text="@string/shoot_text"
         android:textColor="#0000FF" />
 
@@ -27,7 +26,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="22dp"
         android:background="#FF8900"
-        android:onClick="jump"
         android:text="@string/jump_text"
         android:textColor="#0000FF" />
 
@@ -35,5 +33,23 @@
         android:id="@+id/gameView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/MovementRight"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gameView1"
+        android:layout_alignRight="@+id/gameView1"
+        android:text="Right" />
+
+    <Button
+        android:id="@+id/MovementLeft"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gameView1"
+        android:layout_alignLeft="@+id/gameView1"
+        android:text="Left" />
 
 </RelativeLayout>

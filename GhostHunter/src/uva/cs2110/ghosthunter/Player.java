@@ -10,32 +10,36 @@ public class Player {
 	
 	//Need to variable of the shape of player
 	
-	public static float xPos = 600;
-	public static float yPos = 50;
-	public static float xSpeed = 10;
-	public static float ySpeed = 10;
-	public static float gravity = 5;
+	public float xPos;
+	public float yPos;
+	public float xSpeed;
+	public float ySpeed;
+	public float gravity;
 	
 	public Player() {
-		//create instance of a player
+		xPos = 600;
+		yPos = 50;
+		xSpeed = 10;
+		ySpeed = 10;
+		gravity = 5;
 	}
 
 	
-	public static void stop() {
+	public void stop() {
 		xPos += 0;
 		yPos += 0;
 		
 	}
 	
-	public static void moveRight() {
-		xPos += xSpeed;
+	public void moveRight() {
+		yPos += ySpeed;
 	}
 	
-	public static void moveLeft() {
-		xPos -= xSpeed;
+	public void moveLeft() {
+		yPos -= ySpeed;
 	}
 	
-	public static void jump() {
+	public void jump() {
 		xPos += xSpeed;
 		if (xPos < 600) { //or whatever the bottom limit is for the screen
 			xPos -= gravity;

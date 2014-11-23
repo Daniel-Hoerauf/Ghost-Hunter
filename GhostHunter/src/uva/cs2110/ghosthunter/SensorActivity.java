@@ -9,6 +9,7 @@ public class SensorActivity extends Activity implements SensorEventListener {
 	private SensorManager aSensorManager;
 	private Sensor accelerometer;
 	private float x, y, z;
+	private Player p1 = new Player();
 
 	@Override
 	public final void onCreate(Bundle savedInstanceState) {
@@ -65,14 +66,14 @@ public class SensorActivity extends Activity implements SensorEventListener {
 		z = event.values[2];
 		
 	    if (z == 0.0){
-	        Player.stop();
+	        p1.stop();
 	    }
 	    if(z >= 1.5){
-	        Player.moveRight();
+	        p1.moveRight();
 	    }
 
 	    if (z <= -1.5){
-	        Player.moveLeft();
+	        p1.moveLeft();
 	    }
 		
 	}
