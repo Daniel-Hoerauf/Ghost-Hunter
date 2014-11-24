@@ -1,6 +1,8 @@
 package uva.cs2110.ghosthunter;
 
 import java.io.*;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
@@ -47,6 +49,10 @@ public class Player {
 		//may need to implement drag feature
 	}
 	
+	public void shoot() {
+		Bullet b = new Bullet(yPos, xPos);
+	}
+
 
 	
 }

@@ -2,15 +2,20 @@ package uva.cs2110.ghosthunter;
 
 import android.content.Context;
 import android.graphics.*;
+
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+
+import android.hardware.SensorEventListener;
+
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 
-public class GameView extends View /*implements SensorEventListener*/ {
+
+public class GameView extends View {
 
 	private static final int INTERVAL = 100;
 	/*private SensorManager aSensorManager;
@@ -54,7 +59,7 @@ public class GameView extends View /*implements SensorEventListener*/ {
 		count += 10;
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
-		View.OnClickListener moveMentHandler = new View.OnClickListener() {
+		View.OnClickListener movementHandler = new View.OnClickListener() {
 			public void onClick(View v) {
 				switch(v.getId()) {
 				case R.id.MovementLeft:

@@ -2,9 +2,9 @@ package uva.cs2110.ghosthunter;
 
 public interface Projectile {
 	
-	public void getX();
+	public float getX();
 	
-	public void getY();
+	public float getY();
 	
 	public void updateX();
 	

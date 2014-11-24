@@ -24,9 +24,18 @@ public class MainGame extends Activity  {
 		
 		
 
-	}
-	
 
+	}
+
+	
+	
+	
+//    public void jump(View view)	{
+//		yPosition += ySpeed;
+//		if (yPosition < 500) { //or whatever the bottom limit is for the screen
+//			yPosition += gravity;
+//		}
+//    }
 
 }
 
