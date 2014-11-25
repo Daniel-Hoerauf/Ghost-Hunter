@@ -19,8 +19,8 @@ public class Player {
 	public float gravity;
 	
 	public Player() {
-		xPos = 600;
-		yPos = 50;
+		xPos = 0;
+		yPos = 0;
 		xSpeed = 10;
 		ySpeed = 10;
 		gravity = 5;
@@ -42,7 +42,7 @@ public class Player {
 	}
 	
 	public void jump() {
-		xPos += xSpeed;
+		xPos -= xSpeed;
 		if (xPos < 600) { //or whatever the bottom limit is for the screen
 			xPos -= gravity;
 		}
