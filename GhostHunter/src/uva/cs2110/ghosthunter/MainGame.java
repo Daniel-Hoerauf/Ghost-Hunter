@@ -24,19 +24,22 @@ public class MainGame extends Activity  {
 		moveLeft = (Button)findViewById(R.id.MovementLeft); 
 		moveRight = (Button)findViewById(R.id.MovementRight);
 		jump = (Button)findViewById(R.id.jumpButton);
-		moveLeft.setOnClickListener(new View.OnClickListener() {
+		moveLeft.setOnTouchListener(new View.OnTouchListener() {
 
 	        @Override
-	        public void onClick(View v) {
+	        public boolean onTouch(View v, MotionEvent m) {
 	        	GameView.moveLeft();
+	        	return true;
+	        	
 	        }
 
 	    });
-		moveRight.setOnClickListener(new View.OnClickListener() {
+		moveRight.setOnTouchListener(new View.OnTouchListener() {
 
 	        @Override
-	        public void onClick(View v) {
+	        public boolean onTouch(View v, MotionEvent m) {
 	        	GameView.moveRight();
+	        	return true;
 	        }
 
 	    });
