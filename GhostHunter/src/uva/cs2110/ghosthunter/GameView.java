@@ -22,8 +22,7 @@ public class GameView extends View {
 	private Sensor accelerometer;
 	private float z;*/
 
-	protected static Player p1 = new Player();
-	protected static Bullet bullet = new Bullet(p1.xPos, p1.yPos);
+	protected static Player p1 = new Player();;
 	Thread monitorThread = (new Thread(new Monitor()));
 	Paint paint = new Paint();
 	BitmapFactory.Options options = new BitmapFactory.Options();
@@ -62,13 +61,6 @@ public class GameView extends View {
 	protected void onDraw(Canvas canvas)	{
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
-		
-//		    if (pl.score != this.renderedScore || this.renderedScoreString == null) {
-//		        this.renderedScore = this.score;
-//		        this.renderedScoreString = Integer.toString(this.renderedScore);
-//		    }
-		    canvas.drawText(p1.score + "", 30, 30, paint);
-		    
 
 		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
 		try {
@@ -105,9 +97,6 @@ public class GameView extends View {
 
 	public static void jump() {
 		p1.jump();		
-	}
-	public static void shoot() {
-		bullet.updateX();		
 	}
 
 

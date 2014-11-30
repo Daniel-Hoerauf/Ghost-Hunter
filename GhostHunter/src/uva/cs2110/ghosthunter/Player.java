@@ -17,7 +17,6 @@ public class Player {
 	public float xSpeed;
 	public float ySpeed;
 	public float gravity;
-	public int score;
 	
 	public Player() {
 		xPos = 0;
@@ -25,7 +24,6 @@ public class Player {
 		xSpeed = 10;
 		ySpeed = 10;
 		gravity = 5;
-		score = 0;
 	}
 
 	
@@ -37,16 +35,10 @@ public class Player {
 	
 	public void moveRight() {
 		yPos += ySpeed;
-		if (yPos > 575) {
-			yPos = 575;
-		}
 	}
 	
 	public void moveLeft() {
 		yPos -= ySpeed;
-		if (yPos < 25) {
-			yPos = 25;
-		}
 	}
 	
 	public void jump() {
@@ -57,6 +49,10 @@ public class Player {
 		//may need to implement drag feature
 	}
 	
+	public void shoot() {
+		Bullet b = new Bullet(yPos, xPos);
+	}
+
 
 	
 }

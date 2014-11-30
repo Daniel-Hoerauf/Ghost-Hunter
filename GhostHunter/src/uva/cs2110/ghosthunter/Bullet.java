@@ -55,7 +55,6 @@ public class Bullet implements Projectile {
 		return y;
 
 	}
-	
 
 	@Override
 	public void updateX() {
