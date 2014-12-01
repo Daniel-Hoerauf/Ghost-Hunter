@@ -4145,6 +4145,7 @@ Binding(ALT+SHIFT+ARROW_UP,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.ui 2 2 2014-11-30 23:27:23.594
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
 !SESSION 2014-12-01 11:54:54.178 -----------------------------------------------
@@ -4409,3 +4410,7 @@ Binding(ALT+SHIFT+ARROW_UP,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+=======
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-12-01 12:31:12.425
+!MESSAGE fileChanged: failed to find manifest package for project GhostHunter
+>>>>>>> Stashed changes
