@@ -22,7 +22,8 @@ public class GameView extends View {
 	private Sensor accelerometer;
 	private float z;*/
 
-	protected static Player p1 = new Player();;
+	protected static Player p1 = new Player();
+	protected static Bullet b1 = new Bullet(p1.yPos, p1.xPos);
 	Thread monitorThread = (new Thread(new Monitor()));
 	Paint paint = new Paint();
 	BitmapFactory.Options options = new BitmapFactory.Options();
@@ -97,6 +98,10 @@ public class GameView extends View {
 
 	public static void jump() {
 		p1.jump();		
+	}
+	
+	public static void shoot() {
+		b1.updateX();		
 	}
 
 
