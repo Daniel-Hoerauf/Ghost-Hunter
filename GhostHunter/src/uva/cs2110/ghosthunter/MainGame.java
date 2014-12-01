@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainGame extends Activity {
 
@@ -15,6 +16,8 @@ public class MainGame extends Activity {
 	//public static boolean shot = false;
 	protected static int width;
 	protected static int height;
+	
+	private TextView textview;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,12 +75,5 @@ public class MainGame extends Activity {
 		});
 
 	}
-
-	// public void jump(View view) {
-	// yPosition += ySpeed;
-	// if (yPosition < 500) { //or whatever the bottom limit is for the screen
-	// yPosition += gravity;
-	// }
-	// }
-
+	
 }

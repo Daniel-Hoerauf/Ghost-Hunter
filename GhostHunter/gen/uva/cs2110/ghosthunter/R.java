@@ -32,9 +32,10 @@ public final class R {
         public static final int ufo=0x7f020007;
     }
     public static final class id {
-        public static final int MovementLeft=0x7f090007;
-        public static final int MovementRight=0x7f090006;
-        public static final int action_settings=0x7f090008;
+        public static final int MovementLeft=0x7f090008;
+        public static final int MovementRight=0x7f090007;
+        public static final int Scoreboard=0x7f090006;
+        public static final int action_settings=0x7f090009;
         public static final int gameView1=0x7f090005;
         public static final int jumpButton=0x7f090004;
         public static final int optionsButton=0x7f090001;
@@ -59,6 +60,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
+        public static final int empty_scoreboard=0x7f060009;
         public static final int hello_world=0x7f060001;
         public static final int jump_text=0x7f060007;
         public static final int options_text=0x7f060004;

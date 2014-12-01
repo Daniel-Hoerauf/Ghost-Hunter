@@ -1,5 +1,6 @@
 package uva.cs2110.ghosthunter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.*;
 
@@ -31,6 +32,9 @@ public class GameView extends View {
 	protected static int bitmapWidth;
 	protected static int ghostBitmapHeight = 0;
 	protected static int ghostBitmapWidth = 0;
+	protected TextView textview;
+	Activity host = (Activity)this.getContext();
+	
 	Thread monitorThread = (new Thread(new Monitor()));
 	Paint paint = new Paint();
 	BitmapFactory.Options options = new BitmapFactory.Options();
@@ -94,6 +98,12 @@ public class GameView extends View {
 				spooky = null;
 				ghostsKilled++;
 				b1.isShot = false;
+				textview = (TextView)host.findViewById(R.id.Scoreboard);
+				textview.post(new Runnable() {
+				    public void run() {
+				        textview.setText("Ghosts Killed: " + ghostsKilled);
+				    } 
+				});	
 			}
 		}
 		
