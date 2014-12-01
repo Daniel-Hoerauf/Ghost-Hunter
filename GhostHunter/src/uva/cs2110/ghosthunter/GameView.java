@@ -28,6 +28,7 @@ public class GameView extends View {
 	Paint paint = new Paint();
 	BitmapFactory.Options options = new BitmapFactory.Options();
 	Bitmap bg;
+	Bitmap bulletPic;
 	Canvas canvas = new Canvas();
 	Button moveLeft;
 	Button moveRight;
@@ -54,6 +55,7 @@ public class GameView extends View {
 		paint.setColor(Color.parseColor("#000000"));
 		options.inMutable = true;
 		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
+		bulletPic = BitmapFactory.decodeResource(getResources(), R.drawable.bullet, options);
 		monitorThread.setPriority(Thread.MIN_PRIORITY);
 		monitorThread.start();
 		
@@ -63,7 +65,8 @@ public class GameView extends View {
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
 
-		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
+		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint);
+		this.canvas.drawBitmap(bulletPic, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
 		try {
 			Thread.sleep(INTERVAL);
 		} catch (InterruptedException e) {
