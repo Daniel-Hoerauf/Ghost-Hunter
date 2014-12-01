@@ -2,16 +2,20 @@ package uva.cs2110.ghosthunter;
 
 import java.util.ArrayList;
 
+import android.util.Log;
+
 public class Bullet implements Projectile {
 
 	float x, y, speedX;
 	boolean visible;
+	public boolean isShot;
 
 	public Bullet(float yPos, float xPos) {
 		x = yPos;
 		y = xPos;
-		speedX = 10;
+		speedX = 25;
 		visible = true;
+		isShot = false;
 	}
 
 	public float getSpeedX() {
@@ -34,12 +38,12 @@ public class Bullet implements Projectile {
 	}
 
 	
-	public void setX(int x) {
+	public void setX(float x) {
 		this.x = x;
 	}
 
 	
-	public void setY(int y) {
+	public void setY(float y) {
 		this.y = y;
 	}
 
@@ -48,6 +52,14 @@ public class Bullet implements Projectile {
 	public float getX() {
 		return x;
 
+	}
+	
+	public void setShot(boolean val){
+		isShot = val;
+	}
+	
+	public boolean isShot(){
+		return isShot;
 	}
 
 	@Override
@@ -62,6 +74,7 @@ public class Bullet implements Projectile {
 		if (x > 800) { // whatever the right bound of the sceeen is
 			visible = false; // best to remove the bullet all together
 		}
+		Log.d("shot", Float.toString(x));
 
 	}
 

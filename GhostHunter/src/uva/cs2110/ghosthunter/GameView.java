@@ -18,12 +18,16 @@ import android.widget.Button;
 public class GameView extends View {
 
 	private static final int INTERVAL = 100;
+	private static final int CHARWIDTH = 78;
+	private static final int CHARHEIGHT = 90;
 	/*private SensorManager aSensorManager;
 	private Sensor accelerometer;
 	private float z;*/
 
 	protected static Player p1 = new Player();
-	protected static Bullet b1 = new Bullet(p1.yPos, p1.xPos);
+	protected static Bullet b1 = new Bullet(p1.yPos, p1.getXPos());
+	protected static int bitmapHeight;
+	protected static int bitmapWidth;
 	Thread monitorThread = (new Thread(new Monitor()));
 	Paint paint = new Paint();
 	BitmapFactory.Options options = new BitmapFactory.Options();
@@ -55,6 +59,8 @@ public class GameView extends View {
 		paint.setColor(Color.parseColor("#000000"));
 		options.inMutable = true;
 		bg = BitmapFactory.decodeResource(getResources(), R.drawable.main_player, options);
+		bitmapHeight = bg.getHeight();
+		bitmapWidth = bg.getWidth();
 		bulletPic = BitmapFactory.decodeResource(getResources(), R.drawable.bullet, options);
 		monitorThread.setPriority(Thread.MIN_PRIORITY);
 		monitorThread.start();
@@ -65,8 +71,13 @@ public class GameView extends View {
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
 
-		this.canvas.drawBitmap(bg, p1.yPos, p1.xPos, paint);
-		this.canvas.drawBitmap(bulletPic, p1.yPos, p1.xPos, paint); //x and y, so think of it as y and x because horizontal
+		this.canvas.drawBitmap(bg, p1.yPos, p1.getXPos(), paint);
+		
+		if (b1.isShot()) {
+			this.canvas.drawBitmap(bulletPic, b1.x, b1.y, paint);
+			b1.updateX();
+		}
+		
 		try {
 			Thread.sleep(INTERVAL);
 		} catch (InterruptedException e) {
@@ -104,7 +115,9 @@ public class GameView extends View {
 	}
 	
 	public static void shoot() {
-		b1.updateX();		
+		b1.setShot(true);
+		b1.setX(p1.yPos + CHARWIDTH);
+		b1.setY(p1.getXPos()+(CHARHEIGHT/2));
 	}
 
 

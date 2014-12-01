@@ -12,11 +12,14 @@ public class Player {
 
 	// Need to variable of the shape of player
 
-	public float xPos;
+	private float xPos;
 	public float yPos;
 	public float xSpeed;
 	public float ySpeed;
 	public float gravity;
+	
+	private int screenWidth;
+	private int screenHeight;
 
 	public float drag;
 	public int score;
@@ -28,9 +31,11 @@ public class Player {
 	public Player() {
 		xPos = 0;
 		yPos = 0;
-		xSpeed = 50;
+		screenWidth = MainGame.width;
+		screenHeight = MainGame.height;
+		xSpeed = screenHeight / 4;
 		ySpeed = 30;
-		gravity = 5;
+		gravity = 10;
 
 		drag = 5;
 		score = 0;
@@ -43,23 +48,17 @@ public class Player {
 	}
 
 	public void moveRight() {
-		yPos += ySpeed;
-		if (collision == false) {
+	
+		if (collision == false && yPos < (screenWidth - GameView.bitmapWidth)) {
 			yPos += ySpeed;
-			if (yPos > 575) {
-				yPos = 575;
-			}
 			yPosIncreasing = true;
 		}
 	}
 
 	public void moveLeft() {
-		yPos -= ySpeed;
-		if (collision == false) {
+	
+		if (collision == false && yPos > 0) {
 			yPos -= ySpeed;
-			if (yPos < 25) {
-				yPos = 25;
-			}
 			yPosIncreasing = true;
 		}
 	}
@@ -78,6 +77,14 @@ public class Player {
 
 	public void shoot() {
 		Bullet b = new Bullet(yPos, xPos);
+		b.updateX();
+	}
+
+	public float getXPos() {
+		if(xPos < (screenHeight - GameView.bitmapHeight))	{
+			xPos =+ gravity;
+		}
+		return xPos;
 	}
 
 }

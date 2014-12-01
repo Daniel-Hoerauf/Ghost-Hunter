@@ -1,6 +1,7 @@
 package uva.cs2110.ghosthunter;
 
 import android.app.Activity;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.Button;
@@ -11,10 +12,18 @@ public class MainGame extends Activity {
 	Button moveRight;
 	Button jump;
 	Button shoot;
-
+	//public static boolean shot = false;
+	protected static int width;
+	protected static int height;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		width = size.x;
+		width = size.y;
 		// Remove title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		// Remove notification bar
@@ -59,7 +68,6 @@ public class MainGame extends Activity {
 			@Override
 			public void onClick(View v) {
 				GameView.shoot();
-
 			}
 		});
 
