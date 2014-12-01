@@ -23,7 +23,7 @@ public class MainGame extends Activity {
 		Point size = new Point();
 		display.getSize(size);
 		width = size.x;
-		width = size.y;
+		height = size.y;
 		// Remove title bar
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		// Remove notification bar

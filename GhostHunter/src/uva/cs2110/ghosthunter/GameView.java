@@ -25,7 +25,7 @@ public class GameView extends View {
 	private float z;*/
 
 	protected static Player p1 = new Player();
-	protected static Bullet b1 = new Bullet(p1.yPos, p1.getXPos());
+	protected static Bullet b1 = new Bullet(p1.xPos, p1.getYPos());
 	protected static int bitmapHeight;
 	protected static int bitmapWidth;
 	Thread monitorThread = (new Thread(new Monitor()));
@@ -71,7 +71,7 @@ public class GameView extends View {
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
 
-		this.canvas.drawBitmap(bg, p1.yPos, p1.getXPos(), paint);
+		this.canvas.drawBitmap(bg, p1.xPos, p1.getYPos(), paint);
 		
 		if (b1.isShot()) {
 			this.canvas.drawBitmap(bulletPic, b1.x, b1.y, paint);
@@ -116,8 +116,8 @@ public class GameView extends View {
 	
 	public static void shoot() {
 		b1.setShot(true);
-		b1.setX(p1.yPos + CHARWIDTH);
-		b1.setY(p1.getXPos()+(CHARHEIGHT/2));
+		b1.setX(p1.xPos + bitmapWidth);
+		b1.setY(p1.getYPos()+(bitmapHeight/2));
 	}
 
 
