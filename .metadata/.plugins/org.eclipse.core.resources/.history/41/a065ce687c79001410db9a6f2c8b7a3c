@@ -1,0 +1,44 @@
+package uva.cs2110.ghosthunter;
+
+import java.util.ArrayList;
+
+public class EnemyGhost implements Ghost {
+	
+	public float xPos;
+	private float yPos;
+	public float xSpeed;
+	public float ySpeed;
+	public float gravity;
+
+	private int screenWidth;
+	private int screenHeight;
+	
+	public EnemyGhost() {
+		yPos = (screenHeight - GameView.ghostBitmapHeight - 100);
+		xPos = 0;
+		gravity = 25;
+		screenWidth = MainGame.width;
+		screenHeight = MainGame.height;
+		ySpeed = screenHeight/4;
+		xSpeed = 10;
+	}
+
+	@Override
+	public float getXPos() {
+		return xPos;
+
+	}
+
+	@Override
+	public float getYPos() {
+		return yPos;
+
+	}
+
+	@Override
+	public void updateXPos() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

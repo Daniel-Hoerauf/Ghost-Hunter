@@ -45,7 +45,7 @@ public class Player {
 	}
 
 	public void moveRight() {
-		if(xPos < (2*screenWidth - 2*GameView.bitmapWidth - 200))
+		if(xPos < (screenWidth - GameView.bitmapWidth - 100))
 			xPos += xSpeed;
 	}
 

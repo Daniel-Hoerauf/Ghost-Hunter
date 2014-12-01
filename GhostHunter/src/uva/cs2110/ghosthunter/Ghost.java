@@ -4,35 +4,35 @@ import java.util.ArrayList;
 
 interface Ghost {
 	
-	public void getXPos();
+	public float getXPos();
 	
-	public void getYPos();
+	public float getYPos();
 	
 	public void updateXPos();
 	
-	public void updateYPos();
+	//public void updateYPos();
 	
 	/**
 	 * The ghost will disappear from the screen, dropping any loot that it is carrying
 	 */
-	public void die();
+	//public void die();
 	
 	/**
 	 * Use this method to determine whether a ghost is friendly or an enemy
 	 * 
 	 * @return True if the ghost is harmful, false if the ghost is friendly
 	 */
-	public boolean getEnemyStatus();
+	//public boolean getEnemyStatus();
 	
 	/**
 	 * Use this method to change whether a ghost is an enemy or a friend
 	 * 
 	 * @return After switching between enemy/friend, will then call getEnemyStatus on itself
 	 */
-	public boolean changeEnemyStatus();
+	//public boolean changeEnemyStatus();
 	
-	public ArrayList<Item> getInventory();
+	//public ArrayList<Item> getInventory();
 	
-	public ArrayList<Item> addItems(Item...items);
+	//public ArrayList<Item> addItems(Item...items);
 
 }

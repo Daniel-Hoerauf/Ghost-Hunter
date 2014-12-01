@@ -52,4 +52,5 @@
         android:layout_alignLeft="@+id/gameView1"
         android:text="Left" />
 
+
 </RelativeLayout>

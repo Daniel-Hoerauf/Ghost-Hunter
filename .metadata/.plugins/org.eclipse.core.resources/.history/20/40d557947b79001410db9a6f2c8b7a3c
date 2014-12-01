@@ -1,0 +1,34 @@
+package uva.cs2110.ghosthunter;
+
+import java.util.ArrayList;
+
+public class EnemyGhost implements Ghost {
+	
+	public float xPos;
+	private float yPos;
+	public float xSpeed;
+	public float ySpeed;
+	public float gravity;
+
+	private int screenWidth;
+	private int screenHeight;
+
+	@Override
+	public int getXPos() {
+		return xPos;
+
+	}
+
+	@Override
+	public int getYPos() {
+		return yPos;
+
+	}
+
+	@Override
+	public void updateYPos() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

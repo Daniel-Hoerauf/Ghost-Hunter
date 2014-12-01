@@ -1,0 +1,55 @@
+package uva.cs2110.ghosthunter;
+
+import java.util.ArrayList;
+
+public class EnemyGhost implements Ghost {
+
+	@Override
+	public void getXPos() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void getYPos() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateXPos() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateYPos() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean getEnemyStatus() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean changeEnemyStatus() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public ArrayList<Item> getInventory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Item> addItems(Item... items) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

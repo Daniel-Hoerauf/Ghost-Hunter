@@ -13,6 +13,7 @@ import android.hardware.SensorEventListener;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class GameView extends View {
@@ -23,16 +24,20 @@ public class GameView extends View {
 	/*private SensorManager aSensorManager;
 	private Sensor accelerometer;
 	private float z;*/
-
+	protected static int ghostsKilled = 0;
 	protected static Player p1 = new Player();
 	protected static Bullet b1 = new Bullet(p1.xPos, p1.getYPos());
 	protected static int bitmapHeight;
 	protected static int bitmapWidth;
+	protected static int ghostBitmapHeight = 0;
+	protected static int ghostBitmapWidth = 0;
 	Thread monitorThread = (new Thread(new Monitor()));
 	Paint paint = new Paint();
 	BitmapFactory.Options options = new BitmapFactory.Options();
 	Bitmap bg;
 	Bitmap bulletPic;
+	Bitmap enemyGhost;
+	EnemyGhost spooky = null;
 	Canvas canvas = new Canvas();
 	Button moveLeft;
 	Button moveRight;
@@ -62,6 +67,7 @@ public class GameView extends View {
 		bitmapHeight = bg.getHeight();
 		bitmapWidth = bg.getWidth();
 		bulletPic = BitmapFactory.decodeResource(getResources(), R.drawable.bullet, options);
+		enemyGhost = BitmapFactory.decodeResource(getResources(), R.drawable.ufo, options);
 		monitorThread.setPriority(Thread.MIN_PRIORITY);
 		monitorThread.start();
 		
@@ -76,6 +82,19 @@ public class GameView extends View {
 		if (b1.isShot()) {
 			this.canvas.drawBitmap(bulletPic, b1.x, b1.y, paint);
 			b1.updateX();
+		}
+		
+		if(spooky == null)	{
+			spooky = new EnemyGhost();
+		}
+		
+		if(spooky.isAlive)	{
+			this.canvas.drawBitmap(enemyGhost, spooky.getXPos(), spooky.getYPos(), paint);
+			if(b1.isShot())	{
+				spooky = null;
+				ghostsKilled++;
+				b1.isShot = false;
+			}
 		}
 		
 		try {
