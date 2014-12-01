@@ -1,29 +1,28 @@
 package uva.cs2110.ghosthunter;
 
-import java.io.*;
-import java.util.ArrayList;
-
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 
 public class Player {
 	
 	//Need to variable of the shape of player
 	
-	public float xPos;
+	private float xPos;
 	public float yPos;
+	public int screenWidth;
+	public int screenHeight;
 	public float xSpeed;
 	public float ySpeed;
 	public float gravity;
 	
 	public Player() {
-		xPos = 0;
+		xPos = 500;
 		yPos = 0;
-		xSpeed = 10;
+		gravity = 10;
+		screenWidth = MainGame.width;
+		screenHeight = MainGame.height;
+		xSpeed = screenHeight/4;
 		ySpeed = 10;
-		gravity = 5;
 	}
 
 	
@@ -34,23 +33,30 @@ public class Player {
 	}
 	
 	public void moveRight() {
+		if(yPos < (screenWidth - GameView.bitmapWidth - 100))
 		yPos += ySpeed;
 	}
 	
 	public void moveLeft() {
-		yPos -= ySpeed;
+		if(yPos > 0)	{
+			yPos -= ySpeed;
+		}
 	}
 	
 	public void jump() {
 		xPos -= xSpeed;
-		if (xPos < 600) { //or whatever the bottom limit is for the screen
-			xPos -= gravity;
 		}
-		//may need to implement drag feature
-	}
 	
 	public void shoot() {
 		Bullet b = new Bullet(yPos, xPos);
+	}
+
+
+	public float getXPos() {
+		if(xPos < (screenHeight - GameView.bitmapHeight - 100))	{
+				xPos += gravity;
+		}
+		return xPos;
 	}
 
 
