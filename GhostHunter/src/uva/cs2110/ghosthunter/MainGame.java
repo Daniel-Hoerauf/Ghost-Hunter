@@ -121,4 +121,9 @@ public class MainGame extends Activity {
 		inForeground = false;
 	}
 	
+	protected void onResume()	{
+		super.onResume();
+		inForeground = true;
+	}
+	
 }
