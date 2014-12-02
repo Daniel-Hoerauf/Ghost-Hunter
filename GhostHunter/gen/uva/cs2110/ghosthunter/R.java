@@ -30,6 +30,7 @@ public final class R {
         public static final int main_player=0x7f020005;
         public static final int mainbg=0x7f020006;
         public static final int ufo=0x7f020007;
+        public static final int ufo2=0x7f020008;
     }
     public static final class id {
         public static final int GameOver=0x7f090007;
