@@ -2,6 +2,7 @@ package uva.cs2110.ghosthunter;
 
 import android.app.Activity;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class MainGame extends Activity {
 	Button shoot;
 	Button shoot2;
 	Button shield;
+	MediaPlayer gameMusic;
 	
 	//public static boolean shot = false;
 	protected static int width;
@@ -26,6 +28,8 @@ public class MainGame extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        gameMusic = MediaPlayer.create(MainGame.this, R.raw.movinon);
+        gameMusic.start();
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
@@ -121,12 +125,21 @@ public class MainGame extends Activity {
 	@Override
 	protected void onPause()	{
 		super.onPause();
+		gameMusic.pause();
 		inForeground = false;
 	}
 	
+	@Override
 	protected void onResume()	{
 		super.onResume();
+		gameMusic.start();
 		inForeground = true;
+	}
+	
+	@Override
+	protected void onStop()	{
+		super.onStop();
+		gameMusic.release();
 	}
 	
 }
