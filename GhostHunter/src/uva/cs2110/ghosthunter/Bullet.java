@@ -6,6 +6,7 @@ import android.util.Log;
 
 public class Bullet implements Projectile {
 
+	protected static boolean moveForward;
 	int x, y, speedX;
 	boolean visible;
 	public boolean isShot;
@@ -13,7 +14,7 @@ public class Bullet implements Projectile {
 	public Bullet(int yPos, int xPos) {
 		x = yPos;
 		y = xPos;
-		speedX = 25;
+		speedX = 50;
 		visible = true;
 		isShot = false;
 	}
@@ -70,8 +71,13 @@ public class Bullet implements Projectile {
 
 	@Override
 	public void updateX() {
-		x += speedX;
-		if (x > 800) { // whatever the right bound of the sceeen is
+		if(moveForward)	{
+			x += speedX;
+		}
+		else	{
+			x -= speedX;
+		}
+		if (x > 800 || x < 0) { // whatever the right bound of the sceeen is
 			visible = false; // best to remove the bullet all together
 		}
 		Log.d("shot", Integer.toString(x));

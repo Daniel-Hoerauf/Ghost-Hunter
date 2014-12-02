@@ -79,13 +79,13 @@ public class GameView extends View {
 	protected void onDraw(Canvas canvas)	{
 		this.canvas = canvas;
 		super.onDraw(this.canvas);
-
-		this.canvas.drawBitmap(bg, p1.xPos, p1.getYPos(), paint);
 		
 		if (b1.isShot()) {
 			this.canvas.drawBitmap(bulletPic, b1.x, b1.y, paint);
 			b1.updateX();
 		}
+		
+		this.canvas.drawBitmap(bg, p1.xPos, p1.getYPos(), paint);
 		
 		if(spooky == null)	{
 			spooky = new EnemyGhost();
@@ -93,7 +93,7 @@ public class GameView extends View {
 		
 		if(spooky.isAlive)	{
 			this.canvas.drawBitmap(enemyGhost, spooky.getXPos(), spooky.getYPos(), paint);
-			if(Math.abs(spooky.getXPos() - b1.getX()) < 20)	{
+			if(Math.abs((spooky.getXPos() + 50) - b1.getX()) <= 40)	{
 				spooky = null;
 				ghostsKilled++;
 				b1.isShot = false;

@@ -35,7 +35,8 @@ public final class R {
         public static final int MovementLeft=0x7f090008;
         public static final int MovementRight=0x7f090007;
         public static final int Scoreboard=0x7f090006;
-        public static final int action_settings=0x7f090009;
+        public static final int Shoot_Left=0x7f090009;
+        public static final int action_settings=0x7f09000a;
         public static final int gameView1=0x7f090005;
         public static final int jumpButton=0x7f090004;
         public static final int optionsButton=0x7f090001;
@@ -60,12 +61,13 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
-        public static final int empty_scoreboard=0x7f060009;
+        public static final int empty_scoreboard=0x7f06000a;
         public static final int hello_world=0x7f060001;
         public static final int jump_text=0x7f060007;
         public static final int options_text=0x7f060004;
         public static final int play_text=0x7f060006;
-        public static final int shoot_text=0x7f060008;
+        public static final int shootleft_text=0x7f060008;
+        public static final int shootright_text=0x7f060009;
         public static final int splash_screen=0x7f060003;
         public static final int welcome_text=0x7f060005;
     }

@@ -33,7 +33,7 @@ public class EnemyGhost implements Ghost {
 
 	@Override
 	public void updateXPos() {
-		double deltX = xSpeed + 1 * (Math.random() * GameView.ghostsKilled);
+		double deltX = xSpeed + 2 * (Math.random() * GameView.ghostsKilled);
 		if(Math.random() > .4)	{
 			deltX = -deltX;
 		}

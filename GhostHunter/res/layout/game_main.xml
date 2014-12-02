@@ -16,7 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="32dp"
         android:background="#FF8900"
-        android:text="@string/shoot_text"
+        android:text="@string/shootright_text"
         android:textColor="#0000FF" />
 
     <Button
@@ -61,5 +61,16 @@
         android:layout_alignBottom="@+id/gameView1"
         android:layout_alignLeft="@+id/gameView1"
         android:text="Left" />
+
+    <Button
+        android:id="@+id/Shoot_Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/shootButton"
+        android:layout_below="@+id/shootButton"
+        android:layout_marginTop="27dp"
+        android:background="#FF8900"
+        android:text="@string/shootleft_text"
+        android:textColor="#0000FF" />
 
 </RelativeLayout>

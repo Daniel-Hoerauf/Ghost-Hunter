@@ -13,6 +13,7 @@ public class MainGame extends Activity {
 	Button moveRight;
 	Button jump;
 	Button shoot;
+	Button shoot2;
 	//public static boolean shot = false;
 	protected static int width;
 	protected static int height;
@@ -40,6 +41,7 @@ public class MainGame extends Activity {
 		moveRight = (Button) findViewById(R.id.MovementRight);
 		jump = (Button) findViewById(R.id.jumpButton);
 		shoot = (Button) findViewById(R.id.shootButton);
+		shoot2= (Button) findViewById(R.id.Shoot_Left);
 		moveLeft.setOnTouchListener(new View.OnTouchListener() {
 
 			@Override
@@ -71,6 +73,15 @@ public class MainGame extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				Bullet.moveForward = true;
+				GameView.shoot();
+			}
+		});
+		shoot2.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Bullet.moveForward = false;
 				GameView.shoot();
 			}
 		});
