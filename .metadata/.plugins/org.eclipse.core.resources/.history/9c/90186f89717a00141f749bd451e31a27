@@ -112,9 +112,6 @@ public class MainGame extends Activity {
 			}
 		});
 		inForeground = true;
-		GameView.ghostsKilled = 0;
-		textview = (TextView) findViewById(R.id.GameOver);
-		textview.setVisibility(View.INVISIBLE);
 
 	}
 	

@@ -26,6 +26,9 @@ public class MainGame extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		GameView.ghostsKilled = 0;
+		textview = (TextView) findViewById(R.id.GameOver);
+		//textview.setVisibility(View.INVISIBLE);
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
@@ -112,9 +115,6 @@ public class MainGame extends Activity {
 			}
 		});
 		inForeground = true;
-		GameView.ghostsKilled = 0;
-		textview = (TextView) findViewById(R.id.GameOver);
-		textview.setVisibility(View.INVISIBLE);
 
 	}
 	

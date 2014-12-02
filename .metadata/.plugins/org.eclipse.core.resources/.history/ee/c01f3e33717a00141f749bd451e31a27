@@ -119,9 +119,9 @@ public class GameView extends View {
 			textview.post(new Runnable() {
 			    public void run() {
 			    	
-			        textview.setText("Points: " + ghostsKilled); 
+			        textview.setText("Ghosts Killed: " + ghostsKilled); 
 			        
-			        if (ghostsKilled >= 20){
+			        if (ghostsKilled >= 10){
 			        	
 			        	textview = (TextView)host.findViewById(R.id.GameOver);
 			        	textview.setTextColor(Color.GREEN);
