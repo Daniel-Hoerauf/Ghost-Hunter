@@ -12,16 +12,16 @@ public class Player {
 
 	// Need to variable of the shape of player
 
-	public float xPos;
-	private float yPos;
-	public float xSpeed;
-	public float ySpeed;
-	public float gravity;
+	public int xPos;
+	private int yPos;
+	public int xSpeed;
+	public int ySpeed;
+	public int gravity;
 
 	private int screenWidth;
 	private int screenHeight;
 
-	public float drag;
+	public int drag;
 	public int score;
 	public boolean collision = false;
 	public boolean xPosIncreasing = false;
@@ -64,7 +64,7 @@ public class Player {
 		b.updateX();
 	}
 
-	protected float getYPos() {
+	protected int getYPos() {
 		if(yPos < (screenHeight - GameView.bitmapHeight - 100)) {
 			yPos += gravity;
 		}

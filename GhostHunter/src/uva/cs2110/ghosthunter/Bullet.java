@@ -6,11 +6,11 @@ import android.util.Log;
 
 public class Bullet implements Projectile {
 
-	float x, y, speedX;
+	int x, y, speedX;
 	boolean visible;
 	public boolean isShot;
 
-	public Bullet(float yPos, float xPos) {
+	public Bullet(int yPos, int xPos) {
 		x = yPos;
 		y = xPos;
 		speedX = 25;
@@ -18,7 +18,7 @@ public class Bullet implements Projectile {
 		isShot = false;
 	}
 
-	public float getSpeedX() {
+	public int getSpeedX() {
 		return speedX;
 	}
 
@@ -38,18 +38,18 @@ public class Bullet implements Projectile {
 	}
 
 	
-	public void setX(float x) {
+	public void setX(int x) {
 		this.x = x;
 	}
 
 	
-	public void setY(float y) {
+	public void setY(int y) {
 		this.y = y;
 	}
 
 	
 	@Override
-	public float getX() {
+	public int getX() {
 		return x;
 
 	}
@@ -63,7 +63,7 @@ public class Bullet implements Projectile {
 	}
 
 	@Override
-	public float getY() {
+	public int getY() {
 		return y;
 
 	}
@@ -74,7 +74,7 @@ public class Bullet implements Projectile {
 		if (x > 800) { // whatever the right bound of the sceeen is
 			visible = false; // best to remove the bullet all together
 		}
-		Log.d("shot", Float.toString(x));
+		Log.d("shot", Integer.toString(x));
 
 	}
 

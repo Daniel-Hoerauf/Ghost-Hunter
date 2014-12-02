@@ -18,6 +18,7 @@ public class MainGame extends Activity {
 	protected static int height;
 	
 	private TextView textview;
+	protected static boolean inForeground;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,14 @@ public class MainGame extends Activity {
 				GameView.shoot();
 			}
 		});
+		inForeground = true;
 
+	}
+	
+	@Override
+	protected void onPause()	{
+		super.onPause();
+		inForeground = false;
 	}
 	
 }

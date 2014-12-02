@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 interface Ghost {
 	
-	public float getXPos();
+	public int getXPos();
 	
-	public float getYPos();
+	public int getYPos();
 	
 	public void updateXPos();
 	

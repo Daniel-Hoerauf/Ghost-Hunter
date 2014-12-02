@@ -20,8 +20,7 @@ import android.widget.TextView;
 public class GameView extends View {
 
 	private static final int INTERVAL = 100;
-	private static final int CHARWIDTH = 78;
-	private static final int CHARHEIGHT = 90;
+	private static final int BACKGROUND_INTERVAL = 1000;
 	/*private SensorManager aSensorManager;
 	private Sensor accelerometer;
 	private float z;*/
@@ -94,7 +93,7 @@ public class GameView extends View {
 		
 		if(spooky.isAlive)	{
 			this.canvas.drawBitmap(enemyGhost, spooky.getXPos(), spooky.getYPos(), paint);
-			if(b1.isShot())	{
+			if(Math.abs(spooky.getXPos() - b1.getX()) < 20)	{
 				spooky = null;
 				ghostsKilled++;
 				b1.isShot = false;
@@ -108,7 +107,12 @@ public class GameView extends View {
 		}
 		
 		try {
-			Thread.sleep(INTERVAL);
+			if(MainGame.inForeground)	{
+				Thread.sleep(INTERVAL);
+			}
+			else	{
+				Thread.sleep(BACKGROUND_INTERVAL);
+			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

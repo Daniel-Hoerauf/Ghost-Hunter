@@ -1,32 +1,32 @@
 package uva.cs2110.ghosthunter;
 
 public class EnemyGhost implements Ghost {
-	
-	private float xPos;
-	private float yPos;
-	private float xSpeed;
+
+	private int xPos;
+	private int yPos;
+	private int xSpeed;
 	protected boolean isAlive;
 
 	private int screenWidth;
 	private int screenHeight;
-	
+
 	public EnemyGhost() {
 		isAlive = true;
 		screenWidth = MainGame.width;
 		screenHeight = MainGame.height;
 		yPos = (800);
-		xPos = (float) (Math.random() * (screenWidth - GameView.bitmapWidth - 100)) ;
+		xPos = (int) (Math.random() * (screenWidth - GameView.bitmapWidth - 100)) ;
 		xSpeed = 10;
 	}
 
 	@Override
-	public float getXPos() {
+	public int getXPos() {
 		updateXPos();
 		return xPos;
 	}
 
 	@Override
-	public float getYPos() {
+	public int getYPos() {
 		return yPos;
 
 	}
