@@ -14,6 +14,8 @@ public class MainGame extends Activity {
 	Button jump;
 	Button shoot;
 	Button shoot2;
+	Button shield;
+	
 	//public static boolean shot = false;
 	protected static int width;
 	protected static int height;
@@ -42,6 +44,30 @@ public class MainGame extends Activity {
 		jump = (Button) findViewById(R.id.jumpButton);
 		shoot = (Button) findViewById(R.id.shootButton);
 		shoot2= (Button) findViewById(R.id.Shoot_Left);
+		
+		//added in
+		shield = (Button) findViewById(R.id.Shield);
+		
+		
+		
+		shield.setOnTouchListener(new View.OnTouchListener() {
+
+			@Override
+			
+			
+			public boolean onTouch(View v, MotionEvent m) {
+				if (GameView.getghostsKilled() >=5){
+				GameView.setShieldOn(true);
+				GameView.setghostsKilled();
+				}
+				return true;
+				
+			}
+
+		});
+		
+		
+		
 		moveLeft.setOnTouchListener(new View.OnTouchListener() {
 
 			@Override

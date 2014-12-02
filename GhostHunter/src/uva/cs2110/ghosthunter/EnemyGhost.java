@@ -14,7 +14,7 @@ public class EnemyGhost implements Ghost {
 		isAlive = true;
 		screenWidth = MainGame.width;
 		screenHeight = MainGame.height;
-		yPos = (800);
+		yPos = (600);
 		xPos = (int) (Math.random() * (screenWidth - GameView.bitmapWidth - 100)) ;
 		xSpeed = 10;
 	}

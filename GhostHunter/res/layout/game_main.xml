@@ -42,7 +42,23 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="@string/empty_scoreboard"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/GameOver"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/game_over"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FF0000"
+        android:visibility="invisible"
+         />
+    
+  
 
     <Button
         android:id="@+id/MovementRight"
@@ -72,5 +88,17 @@
         android:background="#FF8900"
         android:text="@string/shootleft_text"
         android:textColor="#0000FF" />
+    
+    <Button 
+         android:id="@+id/Shield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/jumpButton"
+         android:layout_below="@+id/jumpButton"
+        android:layout_marginBottom="27dp"
+        android:background="#FF8900"
+        android:text="@string/shield_me"
+        android:textColor="#0000FF"
+        />
 
 </RelativeLayout>

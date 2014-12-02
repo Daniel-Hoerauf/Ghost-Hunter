@@ -12,5 +12,8 @@
 	<string name="shootleft_text">Shoot Left!</string>
 	<string name="shootright_text">Shoot Right!</string>
 	<string name="empty_scoreboard">Ghosts Killed: 0</string>
+	<string name="game_over">GAME OVER!</string>
+	<string name="shield_me">SHIELD!</string>
+	
     
 </resources>

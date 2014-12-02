@@ -27,6 +27,9 @@ public class Player {
 	public boolean xPosIncreasing = false;
 	public boolean xPosDecreasing = false;
 	public boolean yPosIncreasing = false;
+	public boolean shieldOn = false;
+	
+	
 
 	public Player() {
 		yPos = 500;
@@ -36,6 +39,7 @@ public class Player {
 		screenHeight = MainGame.height;
 		ySpeed = screenHeight/4;
 		xSpeed = 10;
+		shieldOn = false;
 	}
 
 	public void stop() {
@@ -69,6 +73,22 @@ public class Player {
 			yPos += gravity;
 		}
 		return yPos;
+	}
+	
+	public int getXPos(){
+		return this.xPos;
+	}
+	
+	//added in by Jake
+	
+	
+	
+	public boolean getShieldOn(){
+		return this.shieldOn;
+	}
+	
+	public void setShield(boolean b){
+		this.shieldOn = b;
 	}
 
 }

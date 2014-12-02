@@ -1,16 +1,14 @@
 package uva.cs2110.ghosthunter;
 
+import java.util.concurrent.TimeUnit;
+
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.*;
-
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-
-import android.hardware.SensorEventListener;
-
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -91,19 +89,59 @@ public class GameView extends View {
 			spooky = new EnemyGhost();
 		}
 		
+		//test
+		
+	
+	
+		
+		
 		if(spooky.isAlive)	{
 			this.canvas.drawBitmap(enemyGhost, spooky.getXPos(), spooky.getYPos(), paint);
 			if(Math.abs((spooky.getXPos() + 50) - b1.getX()) <= 40)	{
 				spooky = null;
 				ghostsKilled++;
 				b1.isShot = false;
-				textview = (TextView)host.findViewById(R.id.Scoreboard);
-				textview.post(new Runnable() {
-				    public void run() {
-				        textview.setText("Ghosts Killed: " + ghostsKilled);
-				    } 
-				});	
+			
+			}else if (Math.abs((spooky.getXPos() + 50) - p1.getXPos()) <= 40 && !p1.getShieldOn()){
+				spooky = null;
+				p1 = new Player ();
+				ghostsKilled--;
+				
+				//textview.post(new Runnable() {
+				   // public void run() {
+				 //       textview.setText("Ghosts Killed: " + ghostsKilled);
+				//    } 
+				//});
 			}
+			
+			textview = (TextView)host.findViewById(R.id.Scoreboard);
+			
+			textview.post(new Runnable() {
+			    public void run() {
+			    	
+			        textview.setText("Ghosts Killed: " + ghostsKilled); 
+			        
+			        if (ghostsKilled >= 10){
+			        	
+			        	textview = (TextView)host.findViewById(R.id.GameOver);
+			        	textview.setTextColor(Color.GREEN);
+			        	textview.setText("YOU WIN!");
+			        	
+
+			        	textview.setVisibility(View.VISIBLE);
+			        	
+			        	
+			        	
+			        
+			        }else if (ghostsKilled <= -2){
+			        	textview = (TextView)host.findViewById(R.id.GameOver);
+			        	textview.setVisibility(View.VISIBLE);
+			        }
+			        
+			    } 
+			});
+			
+ 
 		}
 		
 		try {
@@ -118,7 +156,11 @@ public class GameView extends View {
 			e.printStackTrace();
 		}
 		invalidate();
+		
+	
 	}
+	
+
 
 	private class Monitor implements Runnable {
 		public void run() {
@@ -151,6 +193,19 @@ public class GameView extends View {
 		b1.setShot(true);
 		b1.setX(p1.xPos + bitmapWidth);
 		b1.setY(p1.getYPos()+(bitmapHeight/2));
+		p1.setShield(false);
+	}
+	
+	public static void setShieldOn(boolean b) {
+		p1.setShield(b);
+	}
+	
+	public static int getghostsKilled(){
+		return ghostsKilled;
+	}
+	
+	public static void setghostsKilled(){
+		ghostsKilled = ghostsKilled - 5;
 	}
 
 
